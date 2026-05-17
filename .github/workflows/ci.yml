@@ -42,7 +42,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Run tests via Docker Compose
-        run: docker compose run --rm api pytest tests/ -v --tb=short
+        run: docker compose run --rm api pytest tests/ -v --tb=short -p no:cacheprovider
 
       - name: Push image to GHCR
         run: |
